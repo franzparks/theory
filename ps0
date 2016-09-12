@@ -1,0 +1,117 @@
+%% Please fill in your name and collaboration statement here.
+\newcommand{\studentName}{ Francis Phiri}
+\newcommand{\collaborationStatement}{I worked alone and only with course materials}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[solution, letterpaper]{cscie121}
+\usepackage{enumerate}
+\begin{document}
+\header{0}{Friday, September 16, 2016 at 11:59pm}
+
+
+\problem{2+2}{2 lines}
+Let $X$ and $Y$ be sets. Using set notation, give formal descriptions of the following sets:
+
+\subproblem The set of all nonempty subsets of $X$.
+
+
+\subproblem The difference between $X$ and $Y$, i.e. the set containing all elements of $X$ that are not elements of $Y$. (This is denoted $X \setminus Y$.)
+\\\\
+\solution
+\subsolution
+ % Write your solution to Part (A) here. %
+ If X = \{1,2,3\} and P(X) is the set of all non empty subsets of $X$.
+Then P(X) =  \{ \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}
+\subsolution
+ % Write your solution to Part (B) here. %
+X \setminus  Y = \{ x \in X : x \notin Y \} 
+
+\problem{3+3}{1/4 page}
+Let $\mathbb{N} = \{0, 1, 2, ... \}$ be the set of natural numbers. For each of the following functions $f : \mathbb{N} \to \mathbb{N}$, state whether $f$ is (i) one-to-one/injective, (ii) onto/surjective, and/or (iii) bijective.
+
+\subproblem $f(x) = x!$
+
+\subproblem $f(x) = \begin{cases} 
+      x + 1 & \text{ if } x \text{ is even } \\
+      x - 1 & \text{ if } x \text{ is odd } \\
+   \end{cases}$
+\\\\
+\solution
+\subsolution
+ % Write your solution to Part (A) here. %
+ $f(x) = x!$ is injective because every value of x in the domain N is mapped onto a single unique value in the codomain N and some values in the codomain are not mapped to anything in the domain N. That is, some members of N are not factorials of anything.
+ 
+ E.g: (3,4,5,or 7).
+ 
+\subsolution
+ % Write your solution to Part (B) here. %
+ $f(x) = \begin{cases} 
+      x + 1 & \text{ if } x \text{ is even } \\
+      x - 1 & \text{ if } x \text{ is odd } \\
+   \end{cases}$
+   
+   It is injective because for both cases where the function produces a value that is even or odd, every entry in the domain has an entry in the codomain while some entries are left in the codomain.
+   
+   It is also surjective because for each case (codomain of even or odd values), each of the values in the codomains has one or more values in the domain mapped to it.
+   
+   The function is therefore bijective by virtue of being both injective and surjective.
+
+\problem{6}{1/2 page}
+Consider the binary relation $\lesssim$ defined by $A \lesssim B$ if there exists a one-to-one (injective) function $f : A \to B$. Is $\lesssim$ reflexive? symmetric? transitive? Briefly justify your answers.
+
+\solution
+
+ % Write your solution here. %
+ 
+\problem{6}{2/3 page}
+Define the Fibonacci numbers as follows:
+\[ F_0 = 0 \]
+\[ F_1 = 1 \]
+\[F_n = F_{n-1} + F_{n-2} \text{ for all } n > 1\]
+Prove the following statement by induction:
+
+For $n > 1$, $F_n$ equals the number of strings of length $n-2$ over alphabet $\Sigma = \{a, b\}$ that do not contain two consecutive $a$'s.
+\\\\
+\solution
+
+ % Write your solution here. %
+ Proof: (By Induction)
+ 
+ 
+\problem{2+2+2}{6 lines}
+Let $L_1$ be the language $\{ a^n : n \ge 0\}$ and $L_2$ be the language $\{x : x \in \{a, b\}^* \text{ and } |x| = 5\}$. Answer yes or no to the following questions.
+\subproblem Do the following sets contain the empty string $\varepsilon$?
+\begin{enumerate}
+\item $L_1 \cap L_2$
+\item $L_1 \cup L_2$
+\end{enumerate}
+
+\subproblem Do the following sets have the empty set $\emptyset$ as a subset?
+\begin{enumerate}
+\item $L_2$
+\item $L_1 \cap L_2$
+\end{enumerate}
+
+\subproblem Do the following sets contain $\emptyset$ as an element?
+\begin{enumerate}
+\item $L_1$
+\item $P(L_2)$
+\end{enumerate}
+\solution
+\subsolution
+ % Write your solution to Part (A) here. %
+\subsolution
+ % Write your solution to Part (B) here. %
+\subsolution
+ % Write your solution to Part (C) here. %
+
+\problem{Challenge!! 3}{1/3 page}
+\textit{Note: On every problem set we will provide a challenge problem, generally significantly more dif- ficult than the other problems in the set, but worth only a few points. It is recommended that you attempt these problems, but only after completing the rest of the assignment.} \\\\
+Show that in any group of at least six people, either three of them are mutual friends (i.e. they all know each other) or three of them are mutual strangers (i.e., none of them know each other). You may assume that knowing is symmetric.
+\\\\
+\solution
+
+ % Write your solution here. %
+
+\end{document}
