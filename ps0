@@ -63,6 +63,12 @@ Consider the binary relation $\lesssim$ defined by $A \lesssim B$ if there exist
 \solution
 
  % Write your solution here. %
+1.  $\lesssim$ is reflexive iff for all x \in A, (x,x) \in B.
+
+2.  $\lesssim$ is symetric iff  for all x,y \in A, (x,y) \in B  \implies  (y,x) \in B.
+
+3. $\lesssim$ is transitive iff for all x,y,z \in A, (x,y) \in B  
+and  (y,z) \in B \implies (x,z) \in B.
  
 \problem{6}{2/3 page}
 Define the Fibonacci numbers as follows:
