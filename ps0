@@ -68,7 +68,7 @@ Consider the binary relation $\lesssim$ defined by $A \lesssim B$ if there exist
 2.  $\lesssim$ is symetric iff  for all x,y \in A, (x,y) \in B  \implies  (y,x) \in B.
 
 3. $\lesssim$ is transitive iff for all x,y,z \in A, (x,y) \in B  
-and  (y,z) \in B \implies (x,z) \in B.
+\text { and  (y,z) } \in B \implies (x,z) \in B.
  
 \problem{6}{2/3 page}
 Define the Fibonacci numbers as follows:
@@ -82,7 +82,15 @@ For $n > 1$, $F_n$ equals the number of strings of length $n-2$ over alphabet $\
 \solution
 
  % Write your solution here. %
- Proof: (By Induction)
+ Proof (By Induction):
+    Base case:
+    let n be length of string
+    A set of strings with length n = 2, \{ \{a,b\}, \{b,a\}, \{b,b\} \},
+    A set of strings with length n = 3, \{ \{b,b,b\}, \{b,a,b\}, \{b,b,a\}, \{a,b,a\}, \{a,b,b\} \}
+    
+    Induction step:
+        For any n, let $X_n$ be the set of strings of length n with no consecutive $a$'s. We have proven that $|X_n| = F_n+5$ for n = 2
+and n = 3. Now let k be any number ≥ 5 and assume we have proven that $|X_n| = F_n+3$ for all n ≤ k. We want to conclude that $|X_k+1| = F_k+3$.
  
  
 \problem{2+2+2}{6 lines}
