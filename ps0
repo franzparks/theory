@@ -126,10 +126,22 @@ Let $L_1$ be the language $\{ a^n : n \ge 0\}$ and $L_2$ be the language $\{x : 
 \solution
 \subsolution
  % Write your solution to Part (A) here. %
+ \begin{enumerate}
+\item $L_1 \cap L_2$ = No
+\item $L_1 \cup L_2$ = Yes
+\end{enumerate}
 \subsolution
  % Write your solution to Part (B) here. %
+\begin{enumerate}
+\item $L_2$ = Yes
+\item $L_1 \cap L_2$ = No
+\end{enumerate}
 \subsolution
  % Write your solution to Part (C) here. %
+  \begin{enumerate}
+\item $L_1$ = No
+\item $P(L_2)$ = No
+\end{enumerate}
 
 \problem{Challenge!! 3}{1/3 page}
 \textit{Note: On every problem set we will provide a challenge problem, generally significantly more dif- ficult than the other problems in the set, but worth only a few points. It is recommended that you attempt these problems, but only after completing the rest of the assignment.} \\\\
