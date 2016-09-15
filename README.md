@@ -1,2 +1,2 @@
-# theory
+# Theory
 Notes for ICC
