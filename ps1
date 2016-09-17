@@ -1,5 +1,5 @@
 %% Please fill in your name and collaboration statement here.
-\newcommand{\studentName}{**FILL IN YOUR NAME HERE**}
+\newcommand{\studentName}{Francis Phiri}
 \newcommand{\collaborationStatement}{**FILL IN YOUR COLLABORATION STATEMENT HERE \\ (See the syllabus for information)**}
 
 
