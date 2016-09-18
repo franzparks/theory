@@ -1,6 +1,6 @@
 %% Please fill in your name and collaboration statement here.
 \newcommand{\studentName}{Francis Phiri}
-\newcommand{\collaborationStatement}{**FILL IN YOUR COLLABORATION STATEMENT HERE \\ (See the syllabus for information)**}
+\newcommand{\collaborationStatement}{ I worked alone and only with course materials}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
