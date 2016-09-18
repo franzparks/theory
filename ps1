@@ -134,12 +134,19 @@ Write out the formal 5-tuple description for the DFA you drew in part (A).
 
 \begin{solution}
 \subsolution %Part (A)
+YES
 \subsolution %Part (B)
+YES
 \subsolution %Part (C)
+NO
 \subsolution %Part (E)
+NO
 \subsolution %Part (E)
+NO
 \subsolution %Part (F)
+NO
 \subsolution %Part (G)
+YES
 \end{solution}
 
 \problem{4+4} {1/4 page} Are the following statements true of false?
