@@ -1,6 +1,6 @@
 %% Please fill in your name and collaboration statement here.
-\newcommand{\studentName}{**FILL IN YOUR NAME HERE**}
-\newcommand{\collaborationStatement}{**FILL IN YOUR COLLABORATION STATEMENT HERE \\ (See the syllabus for information)**}
+\newcommand{\studentName}{Francis Phiri}
+\newcommand{\collaborationStatement}{ I worked alone and only with course materials}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,166 +13,185 @@
 \usepackage{hyperref}
 \usetikzlibrary{automata,positioning}
 \begin{document}
-\header{2}{Due Friday, September 30, 2016 11:59pm}
+\header{1}{Due Friday, September 23, 2016 at 11:59pm}
 
 
-\problem{2+2+2+2}{4 lines}
-For each of the following, either convert from the language description to a regular expression describing the language or convert from a regular expression to an English description of the language. Assume $\Sigma = \{a,b\}$.
+\noindent
+When not stated, assume $\Sigma = \{a,b\}$.\\
 
-\subproblem $L = \{w \in \Sigma^* : 3$ consecutive $b$'s do not occur in $w \}$
-\subproblem $L = \{w \in \Sigma^* : w = \varepsilon \vee w = \sigma_1\sigma_2\dots \sigma_k, k \in \mathbb{N}$, where the characters at odd indices are all the same$\}$
-\subproblem $(a\cup b)^* b \cup a(a\cup b)^*$
-\subproblem $a\emptyset b\Sigma^*$
+\problem{2+2}{4 lines} For each DFA below, informally describe the language it accepts.
 
-\begin{solution}
-\subsolution %Part (A)
-\subsolution %Part (B)
-\subsolution %Part (C)
-\subsolution %Part (D)
-\end{solution}
-
-\problem{2+3}{1/3 page}
-
-\emph{Note: If designing finite automata using \texttt{madebyevan.com/fsm}, a self-loop can be made by shift+clicking on a state.}
-
-\subproblem For $\Sigma=\{a,b\}$, design an NFA that recognizes the language expressed by $a^*b^*a^*a$. The NFA should have 3 states.
-
-\subproblem For $\Sigma=\{0,1\}$, design a DFA that recognizes the language $L = \{w : w$ contains an even number of 0s and an odd number of 1s and does not contain the substring 01$ \}$
-
-
-\begin{solution}
-\subsolution %Part (A)
-\subsolution %Part (B)
-\end{solution}
-
-\problem{4}{1/2 page}
-Convert the following NFA into an equivalent DFA using the subset construction. Provide a formal description (5-tuple) and diagram for full credit.
-
+\subproblem\\
 \begin{center}
-\begin{tikzpicture}[scale=0.2]
-\tikzstyle{every node}+=[inner sep=0pt]
-\draw [black] (13.6,-25.6) circle (3);
-\draw (13.6,-25.6) node {$1$};
-\draw [black] (27.2,-15.4) circle (3);
-\draw (27.2,-15.4) node {$2$};
-\draw [black] (27.2,-15.4) circle (2.4);
-\draw [black] (27.2,-34.2) circle (3);
-\draw (27.2,-34.2) node {$4$};
-\draw [black] (27.2,-34.2) circle (2.4);
-\draw [black] (48.8,-34.2) circle (3);
-\draw (48.8,-34.2) node {$5$};
-\draw [black] (48.8,-15.4) circle (3);
-\draw (48.8,-15.4) node {$3$};
-\draw [black] (10.4,-25.6) -- (10.6,-25.6);
-\fill [black] (10.6,-25.6) -- (9.8,-25.1) -- (9.8,-26.1);
-\draw [black] (16,-23.8) -- (24.8,-17.2);
-\fill [black] (24.8,-17.2) -- (23.86,-17.28) -- (24.46,-18.08);
-\draw (21.4,-21) node [below] {$b$};
-\draw [black] (16.14,-27.2) -- (24.66,-32.6);
-\fill [black] (24.66,-32.6) -- (24.26,-31.75) -- (23.72,-32.59);
-\draw (19.4,-30.4) node [below] {$b$};
-\draw [black] (46.336,-35.905) arc (-60.40344:-119.59656:16.879);
-\fill [black] (46.34,-35.91) -- (45.39,-35.87) -- (45.89,-36.73);
-\draw (38,-38.61) node [below] {$b$};
-\draw [black] (29.45,-32.223) arc (125.47765:54.52235:14.732);
-\fill [black] (29.45,-32.22) -- (30.39,-32.17) -- (29.81,-31.35);
-\draw (38,-28.99) node [above] {$a$};
-\draw [black] (51.315,-32.587) arc (150.40886:-137.59114:2.25);
-\draw (56.16,-33.34) node [right] {$a$};
-\fill [black] (51.61,-35.22) -- (52.06,-36.04) -- (52.55,-35.18);
-\draw [black] (46.426,-17.226) arc (-57.86012:-122.13988:15.838);
-\fill [black] (46.43,-17.23) -- (45.48,-17.23) -- (46.01,-18.08);
-\draw (38,-20.15) node [below] {$a$};
-\draw [black] (29.421,-13.392) arc (126.2008:53.7992:14.525);
-\fill [black] (29.42,-13.39) -- (30.36,-13.32) -- (29.77,-12.52);
-\draw (38,-10.09) node [above] {$b$};
-\draw [black] (51.311,-13.78) arc (150.56466:-137.43534:2.25);
-\draw (56.17,-14.51) node [right] {$b$};
-\fill [black] (51.61,-16.41) -- (52.06,-17.24) -- (52.56,-16.37);
-\end{tikzpicture}
+\begin{picture}(80,74)(117,753)
+ \thicklines
+   \put(160,820){\circle{14}}
+   \put(160,820){\circle{10}}
+   \put(130,790){\circle{14}}
+   \put(190,790){\circle{14}}
+   \put(160,820){\circle{14}}
+   \put(160,760){\circle{10}}
+   \put(160,760){\circle{14}}
+   \multiput(117,793)(0.50000,-0.33333){13}{\makebox(0.4444,0.6667){.}}
+   \multiput(123,789)(-0.50000,-0.33333){13}{\makebox(0.4444,0.6667){.}}
+   \put(130,797){\vector( 1, 1){ 22.500}}
+   \put(130,783){\vector( 1,-1){ 22.500}}
+   \put(167,760){\vector( 1, 1){ 22.500}}
+   \put(167,819){\vector( 1,-1){ 21.500}}
+   \put(204,795){\oval(15,8)[t]}
+   \put(204,795){\oval(15,8)[r]}
+   \put(204,791){\vector(-1, 0){5}}
+
+   \put(156,814){\vector( 0,-1){ 48.000}}
+   \put(164,765){\vector( 0, 1){ 48.000}}
+
+   \put(136,813){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(180,764){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(180,812){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(135,765){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(148,790){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(167,780){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(200,802){\makebox(0,0)[lb]{\smash{\em a,b}}}
+
+\end{picture}
 \end{center}
 
+\subproblem\\
+\begin{center}
+\begin{picture}(80,74)(117,753)
+ \thicklines
+   \put(160,820){\circle{14}}
+   \put(130,790){\circle{14}}
+   \put(190,790){\circle{14}}
+   \put(190,790){\circle{10}}
+   \put(160,820){\circle{14}}
+   %\put(160,760){\circle{10}}
+   \put(160,760){\circle{14}}
+   \multiput(117,793)(0.50000,-0.33333){13}{\makebox(0.4444,0.6667){.}}
+   \multiput(123,789)(-0.50000,-0.33333){13}{\makebox(0.4444,0.6667){.}}
+   \put(153,820){\vector(-1,-1){ 22.500}}
+   \put(183,790){\vector(-1,-1){ 22.500}}
+   \put(167,760){\vector( 1, 1){ 22.500}}
+   \put(137,790){\vector( 1, 1){ 22.500}}
+   \put(167,819){\vector( 1,-1){ 21.500}}
+   \put(137,789){\vector( 1,-1){ 21.500}}
+   \put(153,761){\vector(-1, 1){ 21.500}}
+   \put(183,791){\vector(-1, 1){ 21.500}}
+   \put(136,813){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(180,764){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(180,812){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(149,781){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(135,765){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(164,796){\makebox(0,0)[lb]{\smash{\em b}}}
+   \put(151,796){\makebox(0,0)[lb]{\smash{\em a}}}
+   \put(165,781){\makebox(0,0)[lb]{\smash{\em a}}}
+\end{picture}
+\end{center}
 
 \begin{solution}
+\subsolution %Solution to part (A) goes here
+The DFA accepts any language that does not have two or more consecutive a's or b's.
+\subsolution %Solution to part (B) goes here
 
 \end{solution}
 
-\problem{Challenge!! Not required; worth up to 1}{1/2 a page}
+\problem{5+5+(2)}{2/3 page + (2/3 page)} In this problem, we consider the set of nonempty binary strings over the alphabet $\Sigma = \{0, 1\}$, where the highest-order bits are on the left. (For example, the number $8$ would be represented in this language by the binary string $1000$.)
 
-\emph{Note:  On every problem set we will provide a challenge problem, generally significantly more difficult than the other problems in the set, but worth only a few points. It is recommended that if you attempt these problems, you do so only after completing the rest of the assignment.}\\
-
-Suppose we define a deterministic finite array
-(a DFArray) as a line of connected finite controls.
-Each finite control changes state
-according to a deterministic function of its own state and
-the state of its left and right neighbors.  For the finite controls on the
-two ends of the line which are each missing one neighbor,
-these act as if their missing neighbor is a finite control
-in a special $missing$ state.  Finally,
-each finite control executes the same program (i.e., are identical).
-
-A DFArray accepts the string $w$ under the following conditions:
-Start with $|w|$ finite controls connected in a line,
-each in a $s_a$ or $s_b$ state,
-depending on whether the character corresponding
-to that control is $a$ or $b$.
-Note that there is no input tape: the finite controls change state
-based only on themselves and immediate neighbors.
-The entire array ``knows'' the string only through the start
-states of the individual controls.
-
-If at least one of the finite
-controls eventually reaches a final state, the DFArray accepts
-string w.  Note that the DFArray is very different from the DFA or
-NDFA -- the only role that the input string $w$ plays is to
-determine the initial states of the $|w|$ finite controls.
-
-Design a DFArray to recognize $\{w: w$ is a an odd-length palindrome$\}$.
-
-\begin{solution}
-  
-\end{solution}
-
-
-\problem{3+3}{1/4 page}
-
-\noindent Are the following statements true or false?  If a statement is true, justify your answer with a proof. If a statement is false, you may justify your answer with a proof or a counterexample.
-\subproblem The union of a countable number of regular languages is regular.
 \subproblem
-Every subset of a regular language is regular.
+Draw a DFA that accepts the language of all binary strings which leave a remainder of 2 when divided by 4. {\em There are lots of ways to draw DFAs in \LaTeX. See Piazza for a discussion of some of the ways.}
 
-\begin{solution}
-\subsolution %Part (A)
-\subsolution %Part (B)
-\end{solution}
+\subproblem
+Write out the formal 5-tuple description for the DFA you drew in part (A).
 
-
-\problem{1+1+1+1+1+1}{6 lines}
-\noindent Classify the following sets as finite (in which case state the cardinality), countably infinite, or uncountably infinite. Briefly justify your answers.
-\subproblem $\{P(\emptyset)\}$
-\subproblem $P(\mathbb{N})  \times \mathbb{N}$
-\subproblem The set of all syntactically valid C programs
-\subproblem The set of all languages over $\{a,b\}$ of strings of exactly 100 symbols
-\subproblem The set of all strings over $\{a,b\}$ longer than 100 symbols
-\subproblem The set of all languages over $\{a,b\}$ of strings longer than 100 symbols
+\subproblem (Challenge!! Not required; worth up to 2 extra credit points.) What is the minimum number of states that a DFA must have to accept exactly the base-$k$ numerals (i.e. non-empty strings over the alphabet $\Sigma_k = \{0,1,...,(k-1)\}$) that represent numbers which leave a remainder of $m$ when divided by $n$. Assume $m < n$, and $k$ and $n$ are co-prime. Please justify your answer for full points. \\\\
+\emph{Note:  On every problem set we will provide a challenge problem, generally significantly more difficult than the other problems in the set, but worth only a few points. It is recommended that if you attempt these problems, you do so only after completing the rest of the assignment.}
 
 \begin{solution}
 \subsolution %Part (A)
 \subsolution %Part (B)
 \subsolution %Part (C)
-\subsolution %Part (D)
-\subsolution %Part (E)
-\subsolution %Part (F)
 \end{solution}
 
-\problem{0}{}Please estimate the number of hours spent on this assignment to the nearest half hour.\\
+
+\problem{5} {1/3 page} Draw a DFA that only accepts strings that start and end with $b$, but do not have substring $bb$. (Try to use as few states as possible.)
 
 \begin{solution}
-  
+
+\end{solution}
+
+
+\problem{1+1+1+1+1+1+1} {7 lines} For each of the strings below, determine if it is in the language. (No need to explain.) \\
+
+\noindent $L(a(ab)^*bbb^*)$ \\
+\subproblem $abb$
+\subproblem $aabb$
+\subproblem $abababb$ \\
+
+\noindent $L(((babb^*a) \cup (aaa\emptyset b) \cup (ab\emptyset ^* b^*a))^*)$ \\
+\subproblem $aba$
+\subproblem $abbbab$
+\subproblem $babaabbababbbaaba$
+\subproblem $\varepsilon$
+
+\begin{solution}
+\subsolution %Part (A)
+YES
+\subsolution %Part (B)
+YES
+\subsolution %Part (C)
+NO
+\subsolution %Part (E)
+NO
+\subsolution %Part (E)
+NO
+\subsolution %Part (F)
+NO
+\subsolution %Part (G)
+YES
+\end{solution}
+
+\problem{4+4} {1/4 page} Are the following statements true of false?
+Justify your answers with a proof or counterexample.
+
+\subproblem For any languages $L_1$ and $L_2$,
+($L_1$$L_2$)*=$L_1$*$L_2$*.
+
+\subproblem If $L$ is a regular language, then the subset of $L$
+containing all strings in $L$ of odd length is necessarily regular. Remember that $\Sigma = \{a,b\}$. 
+
+
+\begin{solution}
+\subsolution %Part (A)
+\subsolution %Part (B)
+\end{solution}
+
+
+\problem{4}{1/4 page} Prove using induction that any finite union of regular languages is regular.
+
+\begin{solution}
+
 \end{solution}
 
 
 
+
+
+\problem{3+3}{1/3 page}
+Are the following propositions true or false? Justify your answers with a proof or a well-explained counterexample.
+
+\subproblem
+Proposition: Given an NFA $N = (Q, \Sigma, \delta, q_0, F)$, the NFA $N' = (Q, \Sigma, \delta, q_0, Q-F)$ accepts the language $\overline{L(N)} = \Sigma^* - L(N)$.
+
+\subproblem Setup: Let $M$ be an NFA. We say that $M$ contains a \emph{cycle} if there is a state $q$ and a string $x$ such that if $M$ is in state $q$ and reads string $x$, $M$ can return to state $q$. Proposition: If $M$ accepts an infinite language, then $M$ has a cycle.
+
+\begin{solution}
+\subsolution %Part (A)
+\subsolution %Part (B)
+\end{solution}
+
+
+\problem{0}{}Please estimate the number of hours spent on this assignment to the nearest half hour.\\
+\begin{solution}
+\end{solution}
+
 \end{document}
-
-
