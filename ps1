@@ -289,6 +289,8 @@ containing all strings in $L$ of odd length is necessarily regular. Remember tha
 
 \begin{solution}
 \subsolution %Part (A)
+False. Example L1 = {a} and L2 = \emptyset
+
 \subsolution %Part (B)
 \end{solution}
 
