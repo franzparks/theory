@@ -92,7 +92,7 @@ When not stated, assume $\Sigma = \{a,b\}$.\\
 \subsolution %Solution to part (A) goes here
 The DFA accepts any language that does not have two or more consecutive a's or b's.
 \subsolution %Solution to part (B) goes here
-
+The DFA accepts any language that ends with a or b.
 \end{solution}
 
 \problem{5+5+(2)}{2/3 page + (2/3 page)} In this problem, we consider the set of nonempty binary strings over the alphabet $\Sigma = \{0, 1\}$, where the highest-order bits are on the left. (For example, the number $8$ would be represented in this language by the binary string $1000$.)
