@@ -137,53 +137,13 @@ Write out the formal 5-tuple description for the DFA you drew in part (A).
 \begin{solution}
 \subsolution %Part (A)
 \begin{center}
-\begin{emp}(0,0)
-  % Pick a size of nodes other than the default (bignodes). This
-  % also resets the edge color, solid/dashed, etc.
-  mediumnodes;
-  u := 1cm;
-
-  % create a node with a zero inside it, centered at the origin
-  node.a("0"); a.c = (0,0);
-
-  % position additional nodes using absolute coordinates
-  node.b("1"); b.c = (u,0);
-  node.c("2"); c.c = (2u,0);
-  node.d("03"); d.c = (3u,0);
-  node.e("01"); e.c = (4u,0);
-  node.f("12"); f.c = (5u,0);
-  node.g("02"); g.c = (6u,0);
-
-  % labels can use LaTeX format with btex ... etex
-  node.h(btex $\emptyset$ etex); h.c = (0,-u);
-  makestart(a); makefinal(a,d,e,g);
-
-  edge(a,b,right,A);
-  edge(b,c,right,A);
-  edge(c,d,right,B);
-  edge(d,e,right,A);
-  edge(e,f,right,A);
-  edge(f,g,right,A);
-  edge(a,h,right,B);
-
-  % negative angles emerge curved to the left instead of right
-  edge(c,a,-45,A);
-  edge(g,e,-45,A);
-  edge(g,d,-60,B);
-  edge(f,d,60,B);
-
-  loop(h,down,A);
-  loop(h,left,B);
-
-  drawboxed(a,b,c,d,e,f,g,h);
-\end{emp}
 
 %%% my solution begin
 \begin{emp}(0,0)
   % Pick a size of nodes other than the default (bignodes). This
   % also resets the edge color, solid/dashed, etc.
   bignodes;
-  u := 2cm;
+  u := 3cm;
 
   % create a node with a zero inside it, centered at the origin
   node.a("q0"); a.c = (0,0);
@@ -192,29 +152,22 @@ Write out the formal 5-tuple description for the DFA you drew in part (A).
   node.b("q1"); b.c = (u,0);
   node.c("q2"); c.c = (2u,0);
   node.d("q3"); d.c = (3u,0);
-  %node.e("01"); e.c = (4u,0);
-  %node.f("12"); f.c = (5u,0);
-  %node.g("02"); g.c = (6u,0);
-
+  
   % labels can use LaTeX format with btex ... etex
-  node.h(btex $\emptyset$ etex); h.c = (0,-u);
+  %node.h(btex $\emptyset$ etex); h.c = (0,-u);
   makestart(a); makefinal(c);
 
   edge(a,b,left,ONE);
   edge(b,c,left,ZERO);
   edge(d,c,left,ZERO);
-  %edge(c,a,right,ZERO);
-  %edge(e,f,right,A);
-  %edge(f,g,right,A);
-  %edge(a,h,right,B);
+  
 
   % negative angles emerge curved to the left instead of right
   edge(c,a,-45,ZERO);
   edge(c,b,45,ONE);
   edge(b,d,-60,ONE);
-  %edge(f,d,60,B);
 
-  loop(a,left,ZERO);
+  loop(a,down,ZERO);
   loop(d,right,ONE);
 
   drawboxed(a,b,c,d);
