@@ -177,6 +177,25 @@ Write out the formal 5-tuple description for the DFA you drew in part (A).
 
 
 \subsolution %Part (B)
+
+Q = \{q0, q1, q2, q3\}
+
+$\Sigma = \{0, 1\}$
+\par q0 is the start state. 
+\par The set of \text{final} states is $\{q2\}$
+
+\begin{table}[!htb]
+
+\label{my-label}
+\begin{tabular}{lll|ll}
+   &  &    & 0  & 1  \\ \cline{3-5} 
+\delta: &  & q0 & q0 & q1 \\
+   &  & q1 & q2 & q3 \\
+   &  & q2 & q0 & q1 \\
+   &  & q3 & q2 & q3
+\end{tabular}
+\end{table}
+
 \subsolution %Part (C)
 \end{solution}
 
