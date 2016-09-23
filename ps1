@@ -12,7 +12,35 @@
 \usetikzlibrary{arrows,automata}
 \usepackage{hyperref}
 \usetikzlibrary{automata,positioning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{ae,aecompl}
+
+% allow metapost figures to be included inline
+% note: you must invoke latex using:
+%
+%     pdflatex -shell-escape <inputfile>
+%
+% to allow it to invoke external commands. See the very end of the
+% document as well.
+\usepackage{emp,ifpdf}
+\usepackage{graphicx}
+
+% convert metapost figures to .eps or .pdf automatically when
+% including them
+\ifpdf\DeclareGraphicsRule{*}{mps}{*}{}\fi
+
+% include the metapost macros
+\empprelude{input boxes; input theory}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{document}
+\begin{empfile}
+
 \header{1}{Due Friday, September 23, 2016 at 11:59pm}
 
 
@@ -90,8 +118,9 @@ When not stated, assume $\Sigma = \{a,b\}$.\\
 
 \begin{solution}
 \subsolution %Solution to part (A) goes here
+The DFA accepts any language that does not have two or more consecutive a's or b's.
 \subsolution %Solution to part (B) goes here
-
+The DFA accepts any language that ends with a or b.
 \end{solution}
 
 \problem{5+5+(2)}{2/3 page + (2/3 page)} In this problem, we consider the set of nonempty binary strings over the alphabet $\Sigma = \{0, 1\}$, where the highest-order bits are on the left. (For example, the number $8$ would be represented in this language by the binary string $1000$.)
@@ -107,6 +136,50 @@ Write out the formal 5-tuple description for the DFA you drew in part (A).
 
 \begin{solution}
 \subsolution %Part (A)
+\begin{center}
+\begin{emp}(0,0)
+  % Pick a size of nodes other than the default (bignodes). This
+  % also resets the edge color, solid/dashed, etc.
+  mediumnodes;
+  u := 1cm;
+
+  % create a node with a zero inside it, centered at the origin
+  node.a("0"); a.c = (0,0);
+
+  % position additional nodes using absolute coordinates
+  node.b("1"); b.c = (u,0);
+  node.c("2"); c.c = (2u,0);
+  node.d("03"); d.c = (3u,0);
+  node.e("01"); e.c = (4u,0);
+  node.f("12"); f.c = (5u,0);
+  node.g("02"); g.c = (6u,0);
+
+  % labels can use LaTeX format with btex ... etex
+  node.h(btex $\emptyset$ etex); h.c = (0,-u);
+  makestart(a); makefinal(a,d,e,g);
+
+  edge(a,b,right,A);
+  edge(b,c,right,A);
+  edge(c,d,right,B);
+  edge(d,e,right,A);
+  edge(e,f,right,A);
+  edge(f,g,right,A);
+  edge(a,h,right,B);
+
+  % negative angles emerge curved to the left instead of right
+  edge(c,a,-45,A);
+  edge(g,e,-45,A);
+  edge(g,d,-60,B);
+  edge(f,d,60,B);
+
+  loop(h,down,A);
+  loop(h,left,B);
+
+  drawboxed(a,b,c,d,e,f,g,h);
+\end{emp}
+\end{center}
+
+
 \subsolution %Part (B)
 \subsolution %Part (C)
 \end{solution}
@@ -192,5 +265,11 @@ Proposition: Given an NFA $N = (Q, \Sigma, \delta, q_0, F)$, the NFA $N' = (Q, \
 \problem{0}{}Please estimate the number of hours spent on this assignment to the nearest half hour.\\
 \begin{solution}
 \end{solution}
+
+\end{empfile}
+
+% this invokes metapost on the figures. You must run latex a second
+% time for the figures to be included.
+\immediate\write18{mpost -tex=latex \jobname}
 
 \end{document}
