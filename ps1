@@ -289,9 +289,60 @@ containing all strings in $L$ of odd length is necessarily regular. Remember tha
 
 \begin{solution}
 \subsolution %Part (A)
-False. Example L1 = {a} and L2 = \emptyset
+False. Example L1 = \{a\} and L2 = $\emptyset$
 
 \subsolution %Part (B)
+
+True.
+
+Proof (By construction):
+By definition, a language is regular if there exists a DFA or NFA which accepts it. Below is a DFA which accepts all strings in the subset of $L$
+containing all strings in $L$ of odd length.
+
+\begin{center}
+
+%%% my solution begin
+\begin{emp}(0,0)
+  % Pick a size of nodes other than the default (bignodes). This
+  % also resets the edge color, solid/dashed, etc.
+  bignodes;
+  u := 3cm;
+
+  % create a node with a zero inside it, centered at the origin
+  node.a("q0"); a.c = (0,0);
+
+  % position additional nodes using absolute coordinates
+  node.b("q1"); b.c = (u,0);
+  node.c("q2"); c.c = (2u,0);
+  node.d("q3"); d.c = (3u,0);
+  
+  % labels can use LaTeX format with btex ... etex
+  node.e("q4"); e.c = (u,-u);
+  makestart(a); makefinal(d);
+
+  edge(a,b,left,B);
+  edge(a,e,left,A);
+  edge(b,c,left,A);
+  edge(b,e,left,B);
+  edge(c,d,left,B);
+  edge(d,e,left,B);
+  
+
+  % negative angles emerge curved to the left instead of right
+  edge(d,c,-45,A);
+  %edge(c,b,45,ONE);
+  %edge(b,d,-60,ONE);
+
+  loop(c,down,A);
+  loop(e,down,AB);
+
+  drawboxed(a,b,c,d,e);
+\end{emp}
+%%%% my solution end
+\end{center}
+
+
+
 \end{solution}
 
 
