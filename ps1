@@ -299,12 +299,14 @@ Proof (By construction):
 By definition, a language is regular if there exists a DFA or NFA which recognizes it. 
 Let $A$ be the subset of $L$
 containing all strings in $L$ of odd length.
-Let $N$ = $(Q, \Sigma, \delta, q0, F)$ recognize $A$.
+\par Let $N$ = $(Q, \Sigma, \delta, q0, F)$ recognize $A$.
 
-$\Sigma = \{0, 1\}$
-Q = \{q0, q1 \}
-\par q0 is the start state. 
-\par The set of \text{final} states is $\{q1\}$
+\par $Q = \{q0, q1 \}$
+
+\par $\Sigma = \{0, 1\}$
+
+\par $q0 = q0$ 
+\par $F = \{q1\}$
 
 \begin{table}[!htb]
 
