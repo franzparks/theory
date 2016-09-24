@@ -356,6 +356,33 @@ $\blacksquare$
 \problem{4}{1/4 page} Prove using induction that any finite union of regular languages is regular.
 
 \begin{solution}
+We can prove by induction that any finite union of regular languages is regular
+
+Proof (By Induction):
+\par Hypothesis: The union of two regular languages is regular.
+
+\par To prove by induction that any finite union of regular languages is regular: 
+Let $L_n$ be a language formed after the union of n regular languages.
+
+\par Base case:
+
+\par if $n = 1$, then the union of a single regular language is regular.
+
+if $n = 2$, then, by the given hypothesis, we know that $L_2$ is regular.
+
+\par Inductive Hypothesis:
+
+Let's assume for all $n <= k$ that $L_n$ is regular.
+
+\par Inductive Step:
+
+Let $n = k+1$. We know by the inductive hypothesis that $L_k$ is a regular language. So 
+
+$L_n = L_k+1 U L_k$
+
+Where $L_k+1$ is the $k+1 st$ regular language. Since $L_k$ and $L_k+1$ are regular, then $L_n = L_k+1$ is regular by the given hypothesis.
+
+\blacksquare
 
 \end{solution}
 
