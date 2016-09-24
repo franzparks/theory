@@ -315,25 +315,26 @@ containing all strings in $L$ of odd length.
   node.b("q1"); b.c = (u,0);
   node.c("q2"); c.c = (2u,0);
   node.d("q3"); d.c = (3u,0);
+  node.e("q4"); e.c = (4u,0);
   
   % labels can use LaTeX format with btex ... etex
-  node.e("q4"); e.c = (u,-u);
+  %node.e("q4"); e.c = (u,-u);
   makestart(a); makefinal(d);
 
-  edge(a,b,left,B);
-  edge(a,e,left,A);
-  edge(b,c,left,A);
-  edge(b,e,left,B);
-  edge(c,d,left,B);
-  edge(d,e,left,B);
+  edge(a,b,left,AB);
+  %edge(a,e,left,AB);
+  edge(b,c,left,AB);
+  edge(c,d,left,AB);
+  %edge(c,d,left,AB);
+  edge(d,e,left,AB);
   
 
   % negative angles emerge curved to the left instead of right
-  edge(d,c,-45,A);
+  %edge(d,c,-45,A);
   %edge(c,b,45,ONE);
   %edge(b,d,-60,ONE);
 
-  loop(c,down,A);
+  %loop(c,down,A);
   loop(e,down,AB);
 
   drawboxed(a,b,c,d,e);
@@ -341,7 +342,7 @@ containing all strings in $L$ of odd length.
 %%%% my solution end
 \end{center}
 
-
+\blacksquare
 
 \end{solution}
 
