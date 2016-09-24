@@ -362,7 +362,7 @@ Proof (By Induction):
 \par Hypothesis: The union of two regular languages is regular.
 
 \par To prove by induction that any finite union of regular languages is regular: 
-Let $L_n$ be a language formed after the union of n regular languages.
+\par Let $L_n$ be a language formed after the union of n regular languages.
 
 \par Base case:
 
@@ -370,17 +370,18 @@ Let $L_n$ be a language formed after the union of n regular languages.
 
 if $n = 2$, then, by the given hypothesis, we know that $L_2$ is regular.
 
-\par Inductive Hypothesis:
+\par Inductive Hypothesis-
 
 Let's assume for all $n <= k$ that $L_n$ is regular.
 
 \par Inductive Step:
 
-Let $n = k+1$. We know by the inductive hypothesis that $L_k$ is a regular language. So 
+Let $n = k+1$. We know by the inductive hypothesis that $L_k$ is a regular language. 
+\par So 
 
-$L_n = L_k+1 U L_k$
+\par L_n = $L_{k+1}$ \cup  $ {L_k}$
 
-Where $L_k+1$ is the $k+1 st$ regular language. Since $L_k$ and $L_k+1$ are regular, then $L_n = L_k+1$ is regular by the given hypothesis.
+Where $L_{k+1}$ is the ${(k+1)st}$ regular language. Since $L_k$ and $L_{k+1}$ are regular, then $L_n = L_{k+1}$ is regular by the given hypothesis.
 
 \blacksquare
 
