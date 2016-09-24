@@ -296,10 +296,27 @@ False. Example L1 = \{a\} and L2 = $\emptyset$
 True.
 
 Proof (By construction):
-By definition, a language is regular if there exists a DFA or NFA which accepts it. Below is a DFA which accepts all strings in the subset of $L$
+By definition, a language is regular if there exists a DFA or NFA which recognizes it. 
+Let $A$ be the subset of $L$
 containing all strings in $L$ of odd length.
+Let $N$ = $(Q, \Sigma, \delta, q0, F)$ recognize $A$.
 
-\begin{center}
+$\Sigma = \{0, 1\}$
+Q = \{q0, q1 \}
+\par q0 is the start state. 
+\par The set of \text{final} states is $\{q1\}$
+
+\begin{table}[!htb]
+
+\label{my-label}
+\begin{tabular}{lll|ll}
+   &  &    & a  & b  \\ \cline{3-5} 
+\delta: &  & q0 & q1 & q1 \\
+   &  & q1 & q0 & q0
+\end{tabular}
+\end{table}
+
+%\begin{center}
 
 %%% my solution begin
 \begin{emp}(0,0)
@@ -313,36 +330,23 @@ containing all strings in $L$ of odd length.
 
   % position additional nodes using absolute coordinates
   node.b("q1"); b.c = (u,0);
-  node.c("q2"); c.c = (2u,0);
-  node.d("q3"); d.c = (3u,0);
-  node.e("q4"); e.c = (4u,0);
   
   % labels can use LaTeX format with btex ... etex
   %node.e("q4"); e.c = (u,-u);
-  makestart(a); makefinal(d);
+  makestart(a); makefinal(b);
 
-  edge(a,b,left,AB);
-  %edge(a,e,left,AB);
-  edge(b,c,left,AB);
-  edge(c,d,left,AB);
-  %edge(c,d,left,AB);
-  edge(d,e,left,AB);
   
 
   % negative angles emerge curved to the left instead of right
-  %edge(d,c,-45,A);
-  %edge(c,b,45,ONE);
-  %edge(b,d,-60,ONE);
-
-  %loop(c,down,A);
-  loop(e,down,AB);
-
-  drawboxed(a,b,c,d,e);
+  edge(a,b,45,AB);
+  edge(b,a,50,AB);
+  
+  drawboxed(a,b);
 \end{emp}
 %%%% my solution end
-\end{center}
+%\end{center}
 
-\blacksquare
+$\blacksquare$
 
 \end{solution}
 
