@@ -28,7 +28,9 @@ For each of the following, either convert from the language description to a reg
 \subsolution %Part (A)
  $ a^*baa^*(bbaa^*)a^*$
 \subsolution %Part (B)
+
 \subsolution %Part (C)
+ Any number of $a's$ or $b's$ followed by $b$ or $a$ followed by any number $a's$ or $b's$ 
 \subsolution %Part (D)
 \end{solution}
 
