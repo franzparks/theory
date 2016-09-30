@@ -81,6 +81,7 @@ For each of the following, either convert from the language description to a reg
 \begin{center}
 
 %%% my solution begin
+
 \begin{emp}(0,0)
   % Pick a size of nodes other than the default (bignodes). This
   % also resets the edge color, solid/dashed, etc.
@@ -93,29 +94,25 @@ For each of the following, either convert from the language description to a reg
   % position additional nodes using absolute coordinates
   node.b("q1"); b.c = (u,0);
   node.c("q2"); c.c = (2u,0);
-  node.d("q3"); d.c = (3u,0);
+  %node.d("q3"); d.c = (3u,0);
   
   % labels can use LaTeX format with btex ... etex
-  node.e("q4"); e.c = (u,-u);
-  makestart(a); makefinal(d);
+  %node.e("q4"); e.c = (u,-u);
+  makestart(a); makefinal(c);
 
-  edge(a,b,left,B);
-  edge(a,e,left,A);
+  edge(a,b,left,A);
+  %edge(a,e,left,A);
   edge(b,c,left,A);
-  edge(b,e,left,B);
-  edge(c,d,left,B);
-  edge(d,e,left,B);
-  
-
+ 
   % negative angles emerge curved to the left instead of right
-  edge(d,c,-45,A);
+  edge(c,b,-45,A);
   %edge(c,b,45,ONE);
-  %edge(b,d,-60,ONE);
+  edge(c,a,-60,B);
 
-  loop(c,down,A);
-  loop(e,down,AB);
+  loop(a,down,A);
+  loop(b,down,B);
 
-  drawboxed(a,b,c,d,e);
+  drawboxed(a,b,c);
 \end{emp}
 %%%% my solution end
 \end{center}
