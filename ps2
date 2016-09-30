@@ -26,6 +26,7 @@ For each of the following, either convert from the language description to a reg
 
 \begin{solution}
 \subsolution %Part (A)
+ $ a^*baa^*(bbaa^*)a^*$
 \subsolution %Part (B)
 \subsolution %Part (C)
 \subsolution %Part (D)
