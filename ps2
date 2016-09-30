@@ -12,7 +12,39 @@
 \usetikzlibrary{arrows,automata}
 \usepackage{hyperref}
 \usetikzlibrary{automata,positioning}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{ae,aecompl}
+
+% allow metapost figures to be included inline
+% note: you must invoke latex using:
+%
+%     pdflatex -shell-escape <inputfile>
+%
+% to allow it to invoke external commands. See the very end of the
+% document as well.
+\usepackage{emp,ifpdf}
+\usepackage{graphicx}
+
+% convert metapost figures to .eps or .pdf automatically when
+% including them
+\ifpdf\DeclareGraphicsRule{*}{mps}{*}{}\fi
+
+% include the metapost macros
+\empprelude{input boxes; input theory}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
+
+\begin{empfile}
+
 \header{2}{Due Friday, September 30, 2016 11:59pm}
 
 
@@ -45,6 +77,49 @@ For each of the following, either convert from the language description to a reg
 
 \begin{solution}
 \subsolution %Part (A)
+
+\begin{center}
+
+%%% my solution begin
+\begin{emp}(0,0)
+  % Pick a size of nodes other than the default (bignodes). This
+  % also resets the edge color, solid/dashed, etc.
+  bignodes;
+  u := 3cm;
+
+  % create a node with a zero inside it, centered at the origin
+  node.a("q0"); a.c = (0,0);
+
+  % position additional nodes using absolute coordinates
+  node.b("q1"); b.c = (u,0);
+  node.c("q2"); c.c = (2u,0);
+  node.d("q3"); d.c = (3u,0);
+  
+  % labels can use LaTeX format with btex ... etex
+  node.e("q4"); e.c = (u,-u);
+  makestart(a); makefinal(d);
+
+  edge(a,b,left,B);
+  edge(a,e,left,A);
+  edge(b,c,left,A);
+  edge(b,e,left,B);
+  edge(c,d,left,B);
+  edge(d,e,left,B);
+  
+
+  % negative angles emerge curved to the left instead of right
+  edge(d,c,-45,A);
+  %edge(c,b,45,ONE);
+  %edge(b,d,-60,ONE);
+
+  loop(c,down,A);
+  loop(e,down,AB);
+
+  drawboxed(a,b,c,d,e);
+\end{emp}
+%%%% my solution end
+\end{center}
+
 \subsolution %Part (B)
 \end{solution}
 
@@ -174,7 +249,11 @@ Every subset of a regular language is regular.
   
 \end{solution}
 
+\end{empfile}
 
+% this invokes metapost on the figures. You must run latex a second
+% time for the figures to be included.
+\immediate\write18{mpost -tex=latex \jobname}
 
 \end{document}
 
