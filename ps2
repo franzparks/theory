@@ -212,6 +212,61 @@ Convert the following NFA into an equivalent DFA using the subset construction. 
 
 \begin{solution}
 
+\begin{center}
+
+%%% my solution begin
+
+\begin{emp}(0,0)
+  % Pick a size of nodes other than the default (bignodes). This
+  % also resets the edge color, solid/dashed, etc.
+  hugenodes;
+  u := 3cm;
+
+  % create a node with a zero inside it, centered at the origin
+  node.a(btex $\{1\}$ etex); a.c = (0,-u);
+
+  % position additional nodes using absolute coordinates
+  node.b(btex $\{2,4\}$ etex); b.c = (u,-u);
+  node.c(btex $\{5\}$ etex); c.c = (2u,-u);
+  node.d(btex $\{3\}$ etex); d.c = (0,0);
+  
+  % labels can use LaTeX format with btex ... etex
+  node.e(btex $\{2,3\}$ etex); e.c = (u,0);
+  node.f(btex $\{4,5\}$ etex); f.c = (2u,0);
+  node.g(btex $\emptyset$ etex); g.c = (u,-2u);
+  
+  makestart(a); makefinal(b,e,f);
+
+  edge(a,b,left,B);
+  edge(b,d,right,A);
+  edge(a,g,left,A);
+  edge(b,c,left,B);
+  edge(c,g,left,b);
+  edge(c,f,left,A);
+  edge(f,c,left,B);
+ 
+ 
+  % negative angles emerge curved to the left instead of right
+  %edge(b,e,-45,ZERO);
+  %edge(e,b,-45,ZERO);
+  %edge(a,d,-45,ONE);
+  %edge(d,a,-45,ONE);
+  %edge(e,c,-30,ONE);
+  edge(e,d,-45,A);
+  edge(d,e,-45,B);
+  edge(d,g,-85,A);
+
+  loop(e,up,B);
+  loop(f,up,A);
+  loop(g,down,AB);
+
+  drawboxed(a,b,c,d,e,f,g);
+\end{emp}
+%%%% my solution end
+\end{center}
+
+
+
 \end{solution}
 
 \problem{Challenge!! Not required; worth up to 1}{1/2 a page}
