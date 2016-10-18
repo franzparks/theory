@@ -1,0 +1,28 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public int diameter(TreeNode root) {
+
+    int[] res = diameterAndHeight(root);
+    
+    return res[0];
+}
+
+public int[] diameterAndHeight(TreeNode root){
+    
+    int[] heightAndDiam = {0, 0};
+    
+    if(root != null){
+        int[] left = diameterAndHeight(root.left);
+        int[] right = diameterAndHeight(root.right);
+        int height = Math.max(left[1], right[1]) + 1;
+        int rootDiam = left[1] + right[1] + 1; 
+        int finalDiam = Math.max(rootDiam, Math.max(left[0], right[0]));
+        heightAndDiam[0] = finalDiam;
+        heightAndDiam[1] = height;
+        
+    }
+    
+    return heightAndDiam;
+    
+}
