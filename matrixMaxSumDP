@@ -1,0 +1,52 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public static int matrixMaxSumDP(int[][] grid) {
+    
+    int n = grid.length;
+    int m = grid[0].length;
+    
+    Stack<Node> stack = new Stack<Node>();
+    stack.push(new Node(0,0));
+    
+    while(!stack.isEmpty()){
+        
+        Node cur = stack.pop();
+        Node right = null;
+        Node down = null;
+        
+        if(cur.x + 1 < n ) down = new Node(cur.x + 1, cur.y);
+        if(cur.y + 1 < m ) right = new Node(cur.x , cur.y + 1);
+        
+        int currVal = grid[cur.x][cur.y];
+        if(right == null && down != null){
+            grid[down.x][down.y] += currVal;
+            stack.push(down);
+        }else if( right != null && down == null){
+            grid[right.x][right.y] += currVal;
+            stack.push(right);
+        }else if( right != null && down != null){
+            if( (grid[right.x][right.y] + currVal) > (grid[down.x][down.y] + currVal)){
+                grid[right.x][right.y] += currVal;
+                stack.push(right);
+            }else{
+               grid[down.x][down.y] += currVal; 
+               stack.push(down);
+            }
+        }
+    }
+    return grid[n-1][m-1];
+    
+}
+
+static class Node {
+    int x, y;
+    
+    public Node(int xx, int yy){
+        this.x = xx; this.y = yy;
+    }
+    
+}
+
+
+
