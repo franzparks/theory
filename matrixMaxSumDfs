@@ -1,5 +1,56 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
 public static int matrixMaxSumDfs(int[][] grid) {
+   int n = grid.length; int m = grid[0].length;
+   if(n == 1 && m == 1) return grid[0][0];
+   
+   Stack<MyNode> st = new Stack<MyNode>();
+   
+   int max = grid[0][0];
+   MyNode cur = null;
+   MyNode right = null;
+   MyNode down = null;
+   
+   st.push(new MyNode(0,0));
+  int k = 0;
+   while(k++ < 5){ //!st.isEmpty()
+       
+       cur = st.pop();
+        
+       if(cur.x + 1 < n) down = new MyNode(cur.x + 1, cur.y);
+       if(cur.y + 1 < m) right = new MyNode(cur.x, cur.y + 1);
+       
+       if(down != null && right != null){
+           if((max + grid[right.x][right.y]) > (max + grid[down.x][down.y])){
+               max = max + grid[right.x][right.y];
+               grid[right.x][right.y] = 0;
+               st.push(right);
+           }else{
+               max = max + grid[down.x][down.y];
+               grid[down.x][down.y] = 0;
+               st.push(down); 
+           }
+       }else if(right != null && down == null){
+               max = max + grid[right.x][right.y];
+               grid[right.x][right.y] = 0;
+               st.push(right);
+       }else if(right == null && down != null){
+               max = max + grid[down.x][down.y];
+               grid[down.x][down.y] = 0;
+               st.push(down); 
+       }
+   }
+   return max;
+}
+
+
+public static class MyNode{
+    int x; int  y;
     
+    public MyNode(int xx, int yy){
+        this.x = xx; this.y = yy;
+    }
 }
 
 /*
