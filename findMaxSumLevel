@@ -1,0 +1,46 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public int findMaxSumLevel(TreeNode root) { 
+    
+    if(root == null) return -1;
+    
+    int level = 0;
+    int max = root.data;
+    int levelCount = 0;
+    int sumOfCurrentLevel = 0;
+    
+    Queue<TreeNode> currentLevel = new LinkedList<TreeNode>();
+    Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
+    currentLevel.add(root);
+    while(!currentLevel.isEmpty()){
+        
+        TreeNode cur = currentLevel.remove();
+        
+        sumOfCurrentLevel += cur.data;
+        System.out.println(sumOfCurrentLevel);
+        
+        if(cur.left != null){
+            nextLevel.add(cur.left);
+        }
+        
+        if(cur.right != null){
+            nextLevel.add(cur.right);
+        }
+        
+        if(currentLevel.isEmpty()){
+            if(sumOfCurrentLevel > max){
+                max = sumOfCurrentLevel;
+                level = levelCount;
+            }
+            levelCount++;
+            sumOfCurrentLevel = 0;
+            currentLevel = nextLevel;
+            nextLevel = new LinkedList<TreeNode>();
+        }
+    }
+    
+    return level;
+    
+}
+
