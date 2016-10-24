@@ -1,0 +1,16 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public static int maxProfit(int[] a) {
+    
+    int max = 0;
+    if(a.length  < 1) return max;
+    
+    for(int i = 1; i < a.length; i++){
+    	if(a[i] > a[i-1]){
+    	    max += a[i] - a[i - 1];
+    	}
+    }
+    
+    return max;
+}
