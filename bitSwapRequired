@@ -38,4 +38,6 @@ Example:
 
 a = 21, Binary code = 10101
 b = 31, Binary code = 11111
+
+bitSwapRequired(a,b) --> 2
 */
