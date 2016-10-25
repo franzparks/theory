@@ -40,6 +40,13 @@ public  int bitSwapRequired(int a, int b) {
     return count++;
 }
 
+
+/* Solution 3 */
+public int bitSwapRequired(int a, int b) {
+    return Integer.bitCount(a^b);
+}
+
+
 /*
 Given two input integers a and b, write a method to determine the number of bits required to be swapped to convert a to b.
 
