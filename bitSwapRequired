@@ -31,6 +31,15 @@ public int bitSwapRequired(int a, int b) {
 }
 
 
+/* Solution 2 */
+public  int bitSwapRequired(int a, int b) {
+    int count = 0;
+    for(int c=a^b;c != 0; c = c & (c-1)) {
+       count++;
+    }
+    return count++;
+}
+
 /*
 Given two input integers a and b, write a method to determine the number of bits required to be swapped to convert a to b.
 
