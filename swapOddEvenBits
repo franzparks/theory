@@ -3,8 +3,13 @@
 
 public int swapOddEvenBits(int x) {
     
-
-
+    int even = (x & (0xAA)); // Get all even bits of x
+    int odd = (x & (0x55)); // Get all odd bits of x
+    
+    even >>= 1;  // Right shift even bits
+    odd <<= 1;  // Left shift odd bits
+    
+    return (even | odd); // Combine even and odd bits
 
 }
 
