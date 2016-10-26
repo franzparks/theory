@@ -45,7 +45,8 @@ public static ArrayList<String> getStringsFromNums(String digits){
 
 
 /*
-Given a String that represents the digits pressed on a classic cell phone keypad - return all possible letter combinations that the numbers could represent in an ArrayList of Strings. Check out the keypad and mapping below for reference.
+Given a String that represents the digits pressed on a classic cell phone keypad - return all possible letter combinations 
+that the numbers could represent in an ArrayList of Strings. Check out the keypad and mapping below for reference.
 
 Note: 
 a) You can assume that the input String contains only numbers between 2 and 9.
