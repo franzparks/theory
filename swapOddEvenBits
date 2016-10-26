@@ -13,6 +13,13 @@ public int swapOddEvenBits(int x) {
 
 }
 
+/*Solution 2*/
+public static int swapOddEvenBits(int x){
+   //Add your code below this line
+   return ((x & 0xaaaaaaaa) >> 1 | ((x & 0x5555555) << 1));
+   //Add your code above this line
+}
+
 
 /*
 Given a 32 bit integer input x, swap its odd and even bits and return the resulting integer. (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
