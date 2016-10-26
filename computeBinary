@@ -14,6 +14,16 @@ public static String computeBinary(int val) {
     return s.reverse().toString();
 }
 
+/* Solution2 : Recursive*/
+public static String computeBinary(int val) {
+    // Base case: value is less than 2
+    if (val < 2)
+      return Integer.toString(val);
+    // Recursive case: binary rep = binary of the header + last digit (odd/even)
+    else {
+      return computeBinary(val/2)+computeBinary(val%2);
+    }
+  }
 /*
 Write a method to compute the binary representation of a positive integer. The method should return a string with 1s and 0s. 
 
