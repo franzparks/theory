@@ -1,0 +1,16 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public static String computeBinary(int val) {
+
+    StringBuilder s = new StringBuilder();
+    if(val == 0) return "0";
+    
+    while(val != 0){
+        s.append(val%2);
+        val /= 2;
+    }
+    
+    return s.reverse().toString();
+
+}
