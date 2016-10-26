@@ -10,3 +10,10 @@ public static double pow(double x, int n) {
     }
 
 }
+
+/*
+Write a method - pow(x,n) that returns the value of x raised to the power of n (xn). n can be negative!
+Examples:
+pow(2,3) ==> 8.0
+
+*/
