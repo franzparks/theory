@@ -1,14 +1,26 @@
 // java.util.* has been imported for this problem.
 // You don't need any other imports.
 
+/* Solution1: brute force*/
 public static boolean groupSum(int[] arr, int target) {
-  
+     int sum = 0;
+ 	
+    for(int i = 0; i < arr.length; i++){
+      sum += arr[i];
+    }
 
+    if(sum < target) return false;
 
+    for(int i = 0; i < arr.length; i++){
+      int rem = sum - target;
+      int res = Arrays.binarySearch(arr, rem);
 
-
+      if(res >= 0) return true;
+    }
+    return false;
   
 }
+
 
 /*
 Given an array of integers and a target number, determine if it is possible to choose a group of integers from the array,
