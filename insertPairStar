@@ -12,3 +12,12 @@ public static String insertPairStar(String s) {
   }
 
 }
+
+/*
+Given a string, recursively compute a new string where the identical adjacent characters in the original string are separated by a "*".
+
+Examples:
+insertPairStar("cac") ==> "cac"
+
+insertPairStar("cc") ==> "c*c"
+*/
