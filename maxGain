@@ -2,6 +2,18 @@
 // You don't need any other imports.
 
 public static int maxGain(int[] a) {
+    if(a == null || a.length == 1) return 0;
+    int maxGain = 0;
+    int minVal = a[0];
+  
+    for(int i = 1; i < a.length; i++){
+        if(a[i] > minVal){
+            maxGain = Math.max( (a[i] - minVal), maxGain);
+            minVal = Math.min(a[i], minVal);
+        }
+
+    }
     
+    return (maxGain < 0 ? 0 : maxGain);
 
 }
