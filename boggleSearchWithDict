@@ -1,0 +1,6 @@
+// java.util.* has been imported for this problem.
+// You don't need any other imports.
+
+public ArrayList<String> boggleSearchWithDict(char[][] board, Trie dictionary){
+    
+}
